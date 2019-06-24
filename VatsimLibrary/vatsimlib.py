@@ -98,7 +98,7 @@ def status_file_is_stale():
     handle = None
 
     if os.path.exists(status_temp_file):
-        lastmodified = os.stat('file.txt').st_mtime
+        lastmodified = os.stat(vatsim_data_file).st_mtime
         timestamplast = datetime.fromtimestamp(lastmodified)
         timestampnow = datetime.utcnow()
         diff = timestampnow - timestamplast

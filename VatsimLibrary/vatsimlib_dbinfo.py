@@ -14,10 +14,11 @@ def init_db_connection():
     # read data from untracked file
     f = open(script_location / "private.txt", "r")
     lines = f.readlines()
-    host = lines[0]
-    username = lines[1]
-    password = lines[2]
-    database = lines[3]
+    print(lines)
+    host = lines[0].strip()
+    username = lines[1].strip()
+    password = lines[2].strip()
+    database = lines[3].strip()
     f.close()
 
     mydb = mysql.connector.connect(
